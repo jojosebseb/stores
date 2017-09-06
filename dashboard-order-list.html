@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="">
+    <title>WEB TITLE</title>
+
+    <!-- cloud css start -->
+    <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/jquery-ui-1.12.1.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/slick-1.6.0.css" />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <!-- cloud css end-->
+
+    <!-- local css start -->
+    <link rel="stylesheet" type="text/css" href="styles/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 1050px)" href="styles/main_desktop.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 1049px)" href="styles/main_mobile.css" />
+    <!-- local css end -->
+</head>
+<body>
+
+    <div id="dashboard-Nav">
+        <div class="logo-panel">
+            <a href="#"><img src="img/icons/logo-store-white.png" alt=""></a>
+        </div>
+        <div class="user-panel">
+            <div class="user-avatar">
+                <!-- JA -->
+            </div>
+            <div class="user-info">
+                <div class="store-name">
+                    stores.solid
+                </div>
+                <div class="owner-name">
+                    Nando Santoso
+                </div>
+            </div>
+            <div class="account-settings">
+                <div class="menu-handle">
+                    <img src="img/icons/gear.png" alt="" class="icon">
+                    Account Settings
+                </div>
+            </div>
+        </div>
+        <ul class="main-nav">
+            <li>
+                <a href="#"><img src="img/icons/icon_design_s.svg" alt="" class="icon">Store Designer</a>
+            </li>
+            <li>
+                <a href="#"><img src="img/icons/icon_design_s.svg" alt="" class="icon">Orders</a>
+            </li>
+            <li class="sub-parent">
+                <a href="#"><img src="img/icons/icon_design_s.svg" alt="" class="icon">Products</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">Add New</a></li>
+                </ul>
+            </li>
+            <li class="notif">
+                <a href="#"><img src="img/icons/icon_design_s.svg" alt="" class="icon">Message</a>
+                <div class="float-notif">6</div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="dashboard-parentContainer">
+        <div class="parent-title">
+            <div class="container">
+                Order History
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="order-list-parent">
+                <div class="order-list-header">
+                    <div class="customer-name">
+                        Name
+                    </div>
+                    <div class="order-date">
+                        Order Date
+                    </div>
+                    <div class="order-number">
+                        Order Number
+                    </div>
+                    <div class="payment-method">
+                        Payment Method
+                    </div>
+                    <div class="total-fee">
+                        Total
+                    </div>
+                    <div class="payment-status">
+                        Status
+                    </div>
+                </div>
+
+                <div class="order-list-flex">
+                    <div class="customer-name">
+                        <span class="fname">Jonathan</span>
+                        <span class="lname">Sebastian</span>
+                    </div>
+                    <div class="order-date">
+                        <span class="date">12/10/2017</span>
+                        <span class="hours">09:30:21</span>
+                    </div>
+                    <div class="order-number">
+                        0123456789
+                    </div>
+                    <div class="payment-method">
+                        Bank Transfer
+                    </div>
+                    <div class="total-fee">
+                        100,000,000
+                    </div>
+                    <div class="payment-status">
+                        <div class="payment-bg pending">Payment Pending</div>
+                    </div>
+                </div>
+                <div class="order-list-flex">
+                    <div class="customer-name">
+                        <span class="fname">Jonathan</span>
+                        <span class="lname">Sebastian</span>
+                    </div>
+                    <div class="order-date">
+                        <span class="date">12/10/2017</span>
+                        <span class="hours">09:30:21</span>
+                    </div>
+                    <div class="order-number">
+                        0123456789
+                    </div>
+                    <div class="payment-method">
+                        Bank Transfer
+                    </div>
+                    <div class="total-fee">
+                        100,000,000
+                    </div>
+                    <div class="payment-status">
+                        <div class="payment-bg pending">Payment Pending</div>
+                    </div>
+                </div>
+                <div class="order-list-flex">
+                    <div class="customer-name">
+                        <span class="fname">Jonathan</span>
+                        <span class="lname">Sebastian</span>
+                    </div>
+                    <div class="order-date">
+                        <span class="date">12/10/2017</span>
+                        <span class="hours">09:30:21</span>
+                    </div>
+                    <div class="order-number">
+                        0123456789
+                    </div>
+                    <div class="payment-method">
+                        Bank Transfer
+                    </div>
+                    <div class="total-fee">
+                        100,000,000
+                    </div>
+                    <div class="payment-status">
+                        <div class="payment-bg accepted">Payment Accepted</div>
+                    </div>
+                </div>
+                <div class="order-list-flex">
+                    <div class="customer-name">
+                        <span class="fname">Jonathan</span>
+                        <span class="lname">Sebastian</span>
+                    </div>
+                    <div class="order-date">
+                        <span class="date">12/10/2017</span>
+                        <span class="hours">09:30:21</span>
+                    </div>
+                    <div class="order-number">
+                        0123456789
+                    </div>
+                    <div class="payment-method">
+                        Bank Transfer
+                    </div>
+                    <div class="total-fee">
+                        100,000,000
+                    </div>
+                    <div class="payment-status">
+                        <div class="payment-bg canceled">Order Canceled</div>
+                    </div>
+                </div>
+                <div class="order-list-flex">
+                    <div class="customer-name">
+                        <span class="fname">Jonathan</span>
+                        <span class="lname">Sebastian</span>
+                    </div>
+                    <div class="order-date">
+                        <span class="date">12/10/2017</span>
+                        <span class="hours">09:30:21</span>
+                    </div>
+                    <div class="order-number">
+                        0123456789
+                    </div>
+                    <div class="payment-method">
+                        Bank Transfer
+                    </div>
+                    <div class="total-fee">
+                        100,000,000
+                    </div>
+                    <div class="payment-status">
+                        <div class="payment-bg canceled">Order Canceled</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+    <!-- cloud js start -->
+    <script type="text/javascript" src="http://js.static.sldclc.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="http://js.static.sldclc.com/angular.1.6.min.js"></script>
+    <script type="text/javascript" src="http://js.static.sldclc.com/slick-1.6.0.min.js"></script>
+    <!-- cloud js end   -->
+
+    <!-- local js start -->
+    <script type="text/javascript" src="script/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/angular.js"></script>
+    <!-- local js end   -->
+</html>

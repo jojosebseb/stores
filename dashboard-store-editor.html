@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="">
+    <title>WEB TITLE</title>
+
+    <!-- cloud css start -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/jquery-ui-1.12.1.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/slick-1.6.0.css" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <!-- cloud css end-->
+
+    <!-- local css start -->
+    <link rel="stylesheet" type="text/css" href="styles/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 1050px)" href="styles/main_desktop.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 1049px)" href="styles/main_mobile.css" />
+    <!-- local css end -->
+</head>
+<body>
+
+<div id="theme-pallette" class="pinned">
+    <div class="pin-handle active">
+        <img src="img/icons/9362-200.png" alt="">
+    </div>
+    <div class="pallette-header">
+        solid.store
+        <a href="#" class="bg-button">
+            Save
+        </a>
+    </div>
+    <div class="settings-flex">
+        <div class="flex-module ">
+            <img src="img/icons/gear.png" alt="" class="icon">
+            <div class="bottom-title ">Layout</div>
+            <div class="toggle-id">layoutSettings</div>
+        </div>
+        <div class="flex-module ">
+            <img src="img/icons/gear.png" alt="" class="icon">
+            <div class="bottom-title">Text</div>
+            <div class="toggle-id">storeNameSettings</div>
+        </div>
+        <div class="flex-module ">
+            <img src="img/icons/gear.png" alt="" class="icon">
+            <div class="bottom-title">Color</div>
+            <div class="toggle-id">backgroundSettings</div>
+        </div>
+        <div class="flex-module active">
+            <img src="img/icons/gear.png" alt="" class="icon">
+            <div class="bottom-title">Etc</div>
+            <div class="toggle-id">etcSettings</div>
+        </div>
+    </div>
+
+    <div class="section-parent" id="layoutSettings">
+        <div class="layout-choice picked">
+            <img src="img/dummy/layout_a.png" alt="">
+            <div class="layout-class">lay-4</div>
+        </div>
+        <div class="layout-choice">
+            <img src="img/dummy/layout_b.png" alt="">
+            <div class="layout-class">lay-3</div>
+        </div>
+        <div class="layout-choice">
+            <img src="img/dummy/layout_c.png" alt="">
+            <div class="layout-class">lay-2</div>
+        </div>
+        <div class="layout-choice">
+            <img src="img/dummy/layout_e.png" alt="">
+            <div class="layout-class">lay-e</div>
+        </div>
+        <div class="layout-choice">
+            <img src="img/dummy/layout_f.png" alt="">
+            <div class="layout-class">lay-f</div>
+        </div>
+    </div>
+    <div class="section-parent" id="storeNameSettings">
+        <div class="size-parent">
+            <div class="small">A</div>
+            <input type="range" min="40" max="180" value="40" class="custom-range-slider">
+            <div class="big">A</div>
+        </div>
+        <div class="color-flex" id="group1Color">
+            <div class="title">
+                Navigation Color
+            </div>
+            <div class="color-module" style="background-color: #222"></div>
+            <div class="color-module" style="background-color: #eee"></div>
+            <div class="color-module" style="background-color: #aaffaa"></div>
+            <div class="color-module" style="background-color: #ffaaff"></div>
+
+        </div>
+        <div class="font-flex">
+            <div class="font-module" style="font-family:Lora">Example</div>
+            <div class="font-module" style="font-family:Crimson Text">Example</div>
+            <div class="font-module" style="font-family:Varela Round">Example</div>
+            <div class="font-module" style="font-family:Calibri">Example</div>
+        </div>
+    </div>
+    <div class="section-parent" id="backgroundSettings">
+        <div class="color-flex" id="bgColorFlex">
+            <div class="title">
+                Background Color
+            </div>
+            <div class="color-module" style="background-color: #222"></div>
+            <div class="color-module" style="background-color: #eee"></div>
+            <div class="color-module" style="background-color: #aaffaa"></div>
+            <div class="color-module" style="background-color: #ffaaff"></div>
+            <div class="color-module" style="background-color: #ff23ff"></div>
+            <div class="color-module" style="background-color: #ffffaa"></div>
+            <div class="color-module" style="background-color: #aaffff"></div>
+            <div class="color-module" style="background-color: #23aaff"></div>
+            <div class="color-picker"></div>
+        </div>
+        <div class="color-flex" id="bgImgFlex">
+            <div class="title">Background Image</div>
+            <div class="bg-img-module" style="background-image: url('img/dummy/rep-bg1.jpg');"></div>
+            <div class="bg-img-module" style="background-image: url('img/dummy/rep-bg2.jpg');"></div>
+            <div class="bg-img-module" style="background-image: url('img/dummy/rep-bg3.jpg');"></div>
+            <div class="bg-img-module" style="background-image: url('img/dummy/rep-bg4.jpg');"></div>
+            <div class="bg-img-module" style="background-image: url('img/dummy/rep-bg5.jpg');"></div>
+        </div>
+    </div>
+    <div class="section-parent active" id="etcSettings">
+        <div class="staple-container">
+            <div class="title">Product Settings</div>
+            <div class="form-group" id="">
+                <div class="caption">Product Background</div>
+                <div class="custom-toggle active" id="productBgToggle">
+                    <div class="toggle-belt">
+                        On <div class="toggle-ball"></div> Off
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="">
+                <div class="caption">Product Frame</div>
+                <div class="custom-toggle active" id="productFrameToggle">
+                    <div class="toggle-belt">
+                        On <div class="toggle-ball"></div> Off
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="">
+                <div class="caption">Product Detail</div>
+                <div class="custom-toggle active" id="productDetailShow">
+                    <div class="toggle-belt">
+                        On <div class="toggle-ball"></div> Off
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="">
+                <div class="caption">Text Background</div>
+                <div class="custom-toggle active" id="productDetailBg">
+                    <div class="toggle-belt">
+                        On <div class="toggle-ball"></div> Off
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="">
+                <div class="caption">Text Shadow</div>
+                <div class="custom-toggle" id="productShadow">
+                    <div class="toggle-belt">
+                        On <div class="toggle-ball"></div> Off
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-store">
+    <div class="container">
+
+        <div class="section-1">
+            <div class="main-header font-group-1" id="mainStoreHeader" style="font-family:Varela Round">
+                solid.store STORE
+            </div>
+            <div class="main-navigation font-group-1">
+                <div class="nav-module">
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-module">
+                    <a href="#">About</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-2">
+            <div class="product-flex" id="lay-4">
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p1.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p2.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p3.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p4.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p5.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p1.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p2.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p3.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p4.jpg" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-module">
+                    <div class="product-img">
+                        <img src="img/dummy/p6.png" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-name">
+                            Sling Bag
+                        </div>
+                        <div class="product-price">
+                            <span class="unit">IDR</span>
+                            19,000
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+<div class="footer-general">
+    <div class="container">
+        Powered by <img src="img/icons/logo-store-white.png" alt="">
+    </div>
+</div>
+
+</body>
+    <!-- cloud js start -->
+
+    <!-- <script type="text/javascript" src="http://js.static.sldclc.com/angular.1.6.min.js"></script> -->
+
+    <!-- cloud js end   -->
+
+    <!-- local js start -->
+
+    <script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="script/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="script/slick-1.6.0.min.js"></script>
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/angular.js"></script>
+    <!-- local js end   -->
+</html>
