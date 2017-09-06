@@ -205,3 +205,16 @@ $('.main-content').on( 'click', '.delete-icon',function(){
         $('#variationGroup').prepend('<input type="text" class="form-input temp" style="width:90px;">');
     }
 })
+
+$('.main-content').on('keyup', '.variation-name', function(){
+    if ($(this).val() == "") {
+        console.log('empty');
+        $(this).css({
+            'border': '1px solid red'
+            
+        })
+    }
+    else {
+        $(this).css('border', '')
+    }
+})
