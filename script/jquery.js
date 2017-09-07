@@ -153,10 +153,19 @@ $('body').on('click', '.custom-toggle', function(){
         }
     }
 });
+
+//jo-checkbox
 var template = '<div class="custom-toggle" id=""><div class="toggle-belt">On <div class="toggle-ball"></div> Off</div></div>';
+var templateActive = '<div class="custom-toggle active" id=""><div class="toggle-belt">On <div class="toggle-ball"></div> Off</div></div>';
 $('.jo-checkbox').each(function(i){
-    $(this).wrap('<div class="jo-checkparent">'+template+'</div>');
-})
+    if ($(this).is(':checked')) {
+        $(this).wrap('<div class="jo-checkparent">'+templateActive+'</div>');
+    }
+    else {
+        $(this).wrap('<div class="jo-checkparent">'+template+'</div>');
+    }
+});
+//jo-checkbox
 
 //pallette-background
 
