@@ -14,6 +14,31 @@ body{
     // background: #222;
 }
 //DASHBOARD
+.popup-notif-parent{
+    position: fixed;
+    bottom: 90px;
+    right: 150px;
+    background: rgb(43, 43, 43);
+    color: white;
+    padding: 20px 40px 20px 30px;
+    text-align: center;
+    z-index: 5;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    .close-button{
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .undo-button{
+        text-align: right;
+        text-decoration: underline;
+        margin-top: 5px;
+        font-size: 13px;
+    }
+}
 $dashboard-width : 240px;
 .bg-button{
     background: rgba(255,255,255,0.3);
@@ -418,7 +443,7 @@ $dashboard-width : 240px;
             min-width: 140px;
             font-size: 18px;
             letter-spacing: -1px;
-            opacity: 0.6;            
+            opacity: 0.6;
         }
         .form-input{
             border: 1px solid #ddd;

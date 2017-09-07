@@ -102,9 +102,12 @@ $('#productModuleBg > .color-module').on('click', function(){
         'background' : curBg
     });
 });
+var checkBoxes
 
-$('.custom-toggle').on('click', function(){
+$('body').on('click', '.custom-toggle', function(){
     $(this).toggleClass('active');
+    checkBoxes = $(this).parent().find('input');
+    checkBoxes.prop("checked", !checkBoxes.prop("checked"));
     if ($(this).hasClass('active')) {
         //Activated state, case in ID
         if ($(this).attr('id') == 'productBgToggle') {
@@ -150,6 +153,11 @@ $('.custom-toggle').on('click', function(){
         }
     }
 });
+var template = '<div class="custom-toggle" id=""><div class="toggle-belt">On <div class="toggle-ball"></div> Off</div></div>';
+$('.jo-checkbox').each(function(i){
+    $(this).wrap('<div class="jo-checkparent">'+template+'</div>');
+})
+
 //pallette-background
 
 $('.product-handle').on('click', function(){
@@ -159,8 +167,6 @@ $('.product-handle').on('click', function(){
 $('.product-flex-group').on('mouseleave', function(){
     $('.product-handle').removeClass('active');
 });
-
-
 
 $('#imageController').on('click', '.image-box.ready', function(){
     $('.image-box.ready').first().removeClass('ready').addClass('uploaded').append('<img src="img/dummy/p5.jpg" alt=""> <div class="uploaded-hover"><div class="function-button">Edit</div><div class="function-button remove-image-button">Remove</div></div>');
@@ -172,6 +178,7 @@ $('#imageController').on('click', '.remove-image-button', function(){
     $(this).parent().parent().addClass('ready');
     $(this).parent().parent().empty();
 });
+
 
 $('.product-select').on('click', function(){
     if (!$(this).parents('.product-flex-group').hasClass('selected') ) {
@@ -185,10 +192,13 @@ $('.product-select').on('click', function(){
     }
 });
 
+
 $('.product-delete').on('click', function(){
     $('.product-flex-group.selected').hide(300);
-    // $(this).parents('.product-flex-group').hide(300);
-})
+    $(this).parents('.product-flex-group').hide(300);
+});
+
+
 
 var variationParent = '<div class="variation-parent"><input type="text" class="variation-name" value="Variable Name"><input type="text" class="form-input" style="width:70px;"><div class="delete-icon">-</div></div>';
 
@@ -211,10 +221,16 @@ $('.main-content').on('keyup', '.variation-name', function(){
         console.log('empty');
         $(this).css({
             'border': '1px solid red'
-            
+
         })
     }
     else {
         $(this).css('border', '')
     }
 })
+
+// var deleteNotif = 0;
+//
+// function notifHandle(){
+//
+// }
