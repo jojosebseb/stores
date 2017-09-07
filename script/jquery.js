@@ -171,10 +171,19 @@ $('.jo-checkbox').each(function(i){
 
 $('.product-handle').on('click', function(){
     $(this).toggleClass('active');
+
+    if (!$(this).parents('.product-flex-group').hasClass('selected') ) {
+        $(this).parents('.product-flex-group').addClass('semi-selected');
+    }
+    else {
+
+    }
 });
 
 $('.product-flex-group').on('mouseleave', function(){
     $('.product-handle').removeClass('active');
+    $(this).removeClass('semi-selected');
+
 });
 
 $('#imageController').on('click', '.image-box.ready', function(){
@@ -192,8 +201,8 @@ $('#imageController').on('click', '.remove-image-button', function(){
 $('.product-select').on('click', function(){
     if (!$(this).parents('.product-flex-group').hasClass('selected') ) {
         $(this).parents('.product-flex-group').addClass('selected');
+        $(this).parents('.product-flex-group').removeClass('semi-selected');
         $(this).html('Unselect');
-        $('.product-flex-group').addClass('selection-mode');
     }
     else {
         $(this).parents('.product-flex-group').removeClass('selected');
@@ -201,23 +210,86 @@ $('.product-select').on('click', function(){
     }
 });
 
-
+//PRODUCT DELETION AND NOTIFICATION
+var idTemp = 0;
+var popupTemplate = $('<div class="popup-notif-parent delete-popup" id="'+idTemp+'">Product Deleted<div class="undo-button">Undo</div><div class="close-button">x</div></div>');
+var popupCounter = 0;
+var productCounter = 0;
+var myInterval;
 $('.product-delete').on('click', function(){
-    $('.product-flex-group.selected').hide(300);
-    $(this).parents('.product-flex-group').hide(300);
+    popupCounter = $('.popup-notif-parent').length;
+    productCounter = $('.product-flex-group.selected').length + $('.product-flex-group.semi-selected').length;
+    $('.product-flex-group.selected').hide(300).addClass('deleteGroup-'+popupCounter).removeClass('selected');
+    $(this).parents('.product-flex-group').hide(300).addClass('deleteGroup-'+popupCounter).removeClass('selected');
+    notifPopup();
+    setTimeout(function(){notifPositioner();}, 10);
+    clearInterval(myInterval);
+    notifTimer();
+
 });
+$('body').on('click', '.undo-button', function(){
+    $(this).parent().remove();
+    idTemp = $(this).parent().attr('id');
+    $('.'+idTemp).show(300);
+    $('.'+idTemp).find('.product-select').html('Select');
+    $('.product-flex-group').removeClass(idTemp);
+    notifPositioner();
 
+});
+$('body').on('click', '.close-button', function(){
+    $(this).parent().remove();
+    idTemp = $(this).parent().attr('id');
+    $('.'+idTemp).remove();
+    notifPositioner();
+});
+function notifPopup(){
+    popupCounter = $('.popup-notif-parent').length;
+    idTemp = 'deleteGroup-'+popupCounter;
+    $('body').append('<div class="popup-notif-parent delete-popup" id="'+idTemp+'"><div class="timer-parent"><div class="timer-bar"></div></div><span class="number">"'+productCounter+'" </span> product(s) deleted.<div class="undo-button">Undo</div><div class="close-button">x</div></div>');
+}
+function notifPositioner(){
+    $('.popup-notif-parent').each(function(i){
+        $(this).css({
+            bottom: (i*70)+65 +'px',
+            opacity: 1
+        });
+    });
+}
+var tempWidth, curEl;
+function notifTimer(){
+    myInterval = setInterval(function () {
+        console.log('checkInterval');
+        $('.popup-notif-parent').each(function(){
+            tempId = $(this).attr('id');
+            tempWidth = $(this).find('.timer-bar').width();
+            $(this).find('.timer-bar').css({
+                width: tempWidth -1+'px'
+            });
+            if (tempWidth == 0) {
+                $(this).remove();
+                $('.'+tempId).remove();
+            }
 
+            notifPositioner()
+        });
+        if ($('.popup-notif-parent').length == 0) {
+            clearInterval(myInterval);
+        }
 
+        // clearInterval(myInterval);
+    }, 100);
+
+}
+//PRODUCT DELETION AND NOTIFICATION
+
+//variation
 var variationParent = '<div class="variation-parent"><input type="text" class="variation-name" value="Variable Name"><input type="text" class="form-input" style="width:70px;"><div class="delete-icon">-</div></div>';
-
-
 $('#addVariation').on('click', function(){
     $(this).parent().find('.form-input.temp').remove();
     $(this).parent().prepend(variationParent);
 })
 var thisEl;
-$('.main-content').on( 'click', '.delete-icon',function(){
+$('.main-content').on('click', '.delete-icon',function(){
     thisEl = $(this);
     $(this).parents('.variation-parent').remove();
     if ($('.variation-parent').length == 0 ) {
@@ -230,13 +302,12 @@ $('.main-content').on('keyup', '.variation-name', function(){
         console.log('empty');
         $(this).css({
             'border': '1px solid red'
-
-        })
+        });
     }
     else {
         $(this).css('border', '')
     }
-})
+});
 
 // var deleteNotif = 0;
 //

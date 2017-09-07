@@ -16,28 +16,73 @@ body{
 //DASHBOARD
 .popup-notif-parent{
     position: fixed;
-    bottom: 90px;
-    right: 150px;
+    bottom: 0px;
+    left: 85%;
     background: rgb(43, 43, 43);
     color: white;
-    padding: 20px 40px 20px 30px;
+    padding: 15px 40px 10px 30px;
     text-align: center;
     z-index: 5;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
     opacity: 0;
+    transition: all .4s ease;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+    overflow: hidden;
+    font-family: Calibri;
+    .number{
+        color: red;
+        font-family: Calibri;
+        padding-right: 3px;
+    }
     .close-button{
         position: absolute;
         top: 5px;
         right: 10px;
         cursor: pointer;
+        opacity: 0.7;
     }
     .undo-button{
         text-align: right;
         text-decoration: underline;
         margin-top: 5px;
         font-size: 13px;
+        cursor: pointer;
+        opacity: 0.7;
     }
+    .timer-parent{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        // background: rgb(114, 86, 128);
+        // background: rgba(200,200,200, 0.7);
+        width: 100%;
+        .timer-bar{
+            height: 100%;
+            width: 100%;
+            right: 0;
+            background: rgba(200,200,200, 0.7);
+            background: rgb(134, 106, 148);
+            position: absolute;
+            // animation: glow 2s linear infinite;
+            // animation-iteration-count:infinite;
+        }
+    }
+}
+@keyframes glow {
+    0%{
+        background: rgb(114, 86, 128);
+    }
+    50%{
+        background: rgb(200, 200, 200);
+    }
+    100%{
+        background: rgb(114, 86, 128);
+    }
+}
+.popup-notif-parent.active{
+    opacity: 1;
 }
 $dashboard-width : 240px;
 .bg-button{
@@ -637,8 +682,13 @@ $dashboard-width : 240px;
     align-items: center;
     padding: 5px 20px;
 }
+.jo-checkbox{
+    display: none;
+}
 $product-width: 70px;
 .product-table-parent{
+    width: 800px;
+    margin: auto;
     .public-parent{
         width: 60px;
     }
@@ -658,6 +708,10 @@ $product-width: 70px;
         font-size: 14px;
         margin-top: 10px;
         justify-content: space-between;
+        .product-handle{
+            height: 0;
+            padding: 0;
+        }
         .product-image{
             height: 0;
         }
@@ -672,9 +726,9 @@ $product-width: 70px;
         display: flex;
         border-radius: 3px;
         background: white;
-        padding: 10px;
+        padding: 5px;
         align-items: center;
-        margin: 10px 0;
+        margin: 1px 0;
         border: 1px solid white;
         box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
         position: relative;
@@ -715,20 +769,23 @@ $product-width: 70px;
         box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.15);
         z-index: 5;
     }
-    .product-flex-group.selected{
-        border: 1px solid green;
+    .product-flex-group.selected, .product-flex-group.semi-selected{
+        border: 1px solid rgb(131, 158, 125);
+        // box-shadow: 1px 2px 2px 1px rgba(0,250,0,0.15);
     }
     .product-handle{
         border-radius: 3px;
-        padding: 4px 5px;
+        // padding: 4px 5px;
         width: 32px;
+        height: 32px;
+        padding: 7px 0;
         position: relative;
         .handle-lines{
             background: #555;
-            height: 4px;
-            margin: 3px 6px;
-            width: 4px;
-            border-radius: 50%;
+            height: 2px;
+            margin: 3px auto;
+            width: 15px;
+            // border-radius: 50%;
         }
         .product-options{
             position: absolute;

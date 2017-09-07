@@ -12,16 +12,26 @@
 
 .popup-notif-parent {
   position: fixed;
-  bottom: 90px;
-  right: 150px;
+  bottom: 0px;
+  left: 85%;
   background: #2b2b2b;
   color: white;
-  padding: 20px 40px 20px 30px;
+  padding: 15px 40px 10px 30px;
   text-align: center;
   z-index: 5;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0;
+  transition: all .4s ease;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: Calibri;
+}
+
+.popup-notif-parent .number {
+  color: red;
+  font-family: Calibri;
+  padding-right: 3px;
 }
 
 .popup-notif-parent .close-button {
@@ -29,6 +39,7 @@
   top: 5px;
   right: 10px;
   cursor: pointer;
+  opacity: 0.7;
 }
 
 .popup-notif-parent .undo-button {
@@ -36,6 +47,41 @@
   text-decoration: underline;
   margin-top: 5px;
   font-size: 13px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.popup-notif-parent .timer-parent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.popup-notif-parent .timer-parent .timer-bar {
+  height: 100%;
+  width: 100%;
+  right: 0;
+  background: rgba(200, 200, 200, 0.7);
+  background: #866a94;
+  position: absolute;
+}
+
+@keyframes glow {
+  0% {
+    background: #725680;
+  }
+  50% {
+    background: #c8c8c8;
+  }
+  100% {
+    background: #725680;
+  }
+}
+
+.popup-notif-parent.active {
+  opacity: 1;
 }
 
 .bg-button {
@@ -704,6 +750,15 @@
   padding: 5px 20px;
 }
 
+.jo-checkbox {
+  display: none;
+}
+
+.product-table-parent {
+  width: 800px;
+  margin: auto;
+}
+
 .product-table-parent .public-parent {
   width: 60px;
 }
@@ -728,6 +783,11 @@
   justify-content: space-between;
 }
 
+.product-table-parent .product-header .product-handle {
+  height: 0;
+  padding: 0;
+}
+
 .product-table-parent .product-header .product-image {
   height: 0;
 }
@@ -744,9 +804,9 @@
   display: flex;
   border-radius: 3px;
   background: white;
-  padding: 10px;
+  padding: 5px;
   align-items: center;
-  margin: 10px 0;
+  margin: 1px 0;
   border: 1px solid white;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -793,23 +853,23 @@
   z-index: 5;
 }
 
-.product-table-parent .product-flex-group.selected {
-  border: 1px solid green;
+.product-table-parent .product-flex-group.selected, .product-table-parent .product-flex-group.semi-selected {
+  border: 1px solid #839e7d;
 }
 
 .product-table-parent .product-handle {
   border-radius: 3px;
-  padding: 4px 5px;
   width: 32px;
+  height: 32px;
+  padding: 7px 0;
   position: relative;
 }
 
 .product-table-parent .product-handle .handle-lines {
   background: #555;
-  height: 4px;
-  margin: 3px 6px;
-  width: 4px;
-  border-radius: 50%;
+  height: 2px;
+  margin: 3px auto;
+  width: 15px;
 }
 
 .product-table-parent .product-handle .product-options {
