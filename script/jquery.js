@@ -167,11 +167,25 @@ $('.jo-checkbox').each(function(i){
 });
 //jo-checkbox
 
-//pallette-background
+//UI-DRAGGABLE-------------START
+$(function() {
+    $(".product-table-parent").sortable({
+        cancel: ".product-header",
+        update: function( event, ui ) {priorityArranger();}
+    });
+    $(".product-table-parent").disableSelection();
+});
+priorityArranger();
+function priorityArranger(){
+    $('.product-flex-group').each(function(i){
+        $(this).find('.product-id').html(i);
+    });
+}
+//UI-DRAGGABLE-------------END
 
+//pallette-background
 $('.product-handle').on('click', function(){
     $(this).toggleClass('active');
-
     if (!$(this).parents('.product-flex-group').hasClass('selected') ) {
         $(this).parents('.product-flex-group').addClass('semi-selected');
     }
@@ -183,8 +197,8 @@ $('.product-handle').on('click', function(){
 $('.product-flex-group').on('mouseleave', function(){
     $('.product-handle').removeClass('active');
     $(this).removeClass('semi-selected');
-
 });
+
 
 $('#imageController').on('click', '.image-box.ready', function(){
     $('.image-box.ready').first().removeClass('ready').addClass('uploaded').append('<img src="img/dummy/p5.jpg" alt=""> <div class="uploaded-hover"><div class="function-button">Edit</div><div class="function-button remove-image-button">Remove</div></div>');
@@ -197,18 +211,24 @@ $('#imageController').on('click', '.remove-image-button', function(){
     $(this).parent().parent().empty();
 });
 
+var currentMode;
 
 $('.product-select').on('click', function(){
     if (!$(this).parents('.product-flex-group').hasClass('selected') ) {
         $(this).parents('.product-flex-group').addClass('selected');
         $(this).parents('.product-flex-group').removeClass('semi-selected');
         $(this).html('Unselect');
+        currentMode = 'SelectionMode';
     }
     else {
         $(this).parents('.product-flex-group').removeClass('selected');
         $(this).html('Select');
     }
 });
+
+$('.product-flex-group').on('click', function(){
+
+})
 
 //PRODUCT DELETION AND NOTIFICATION
 var idTemp = 0;
