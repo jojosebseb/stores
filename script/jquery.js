@@ -169,11 +169,11 @@ $('.jo-checkbox').each(function(i){
 
 //UI-DRAGGABLE-------------START
 $(function() {
-    $(".product-table-parent").sortable({
+    $(".product-sortable").sortable({
         cancel: ".product-header",
         update: function( event, ui ) {priorityArranger();}
     });
-    $(".product-table-parent").disableSelection();
+    $(".product-sortable").disableSelection();
 });
 priorityArranger();
 function priorityArranger(){
