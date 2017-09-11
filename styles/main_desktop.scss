@@ -30,6 +30,7 @@ body{
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
     overflow: hidden;
     font-family: Calibri;
+    opacity: 0.8;
     .number{
         color: red;
         font-family: Calibri;
@@ -460,7 +461,7 @@ $dashboard-width : 240px;
 
 .form-container{
     background: white;
-    padding: 10px 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -481,7 +482,7 @@ $dashboard-width : 240px;
         display: flex;
         width: 100%;
         flex-wrap: wrap;
-        padding: 20px 10px;
+        padding: 15px 0px;
         border-bottom: 1px solid #f1f1f1;
         align-items: center;
         .form-caption{
@@ -489,6 +490,7 @@ $dashboard-width : 240px;
             font-size: 18px;
             letter-spacing: -1px;
             opacity: 0.6;
+            margin-right: 20px;
         }
         .form-input{
             border: 1px solid #ddd;
@@ -499,9 +501,22 @@ $dashboard-width : 240px;
             background: white;
             margin-right: 5px;
         }
+        .form-button{
+            background:  rgb(80, 141, 222);
+            color: white;
+            padding: 8px 25px;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+        .form-button:hover{
+            opacity: 0.9;
+        }
         .form-value{
             padding-left: 30px;
         }
+    }
+    .form-group:nth-last-child(1){
+        border-bottom: 0;
     }
     .edit-button{
         display: inline-block;
@@ -509,6 +524,14 @@ $dashboard-width : 240px;
         font-size: 13px;
         cursor: pointer;
         border-bottom: 1px solid rgb(80, 141, 222);
+    }
+}
+.form-container.seperate{
+    .form-group{
+        justify-content: space-between;
+    }
+    .jo-checkparent {
+        padding: 0 10px 0 0;
     }
 }
 .variation-parent{
@@ -740,6 +763,13 @@ $product-width: 70px;
         position: relative;
         justify-content: space-between;
         cursor: move;
+        .product-name{
+            cursor: pointer;
+        }
+        .product-name:hover{
+            opacity: 0.8;
+            text-decoration: underline;
+        }
         .product-id{
             position: absolute;
             right: 101%;
@@ -773,7 +803,7 @@ $product-width: 70px;
     }
     .product-flex-group:hover{
         box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.15);
-        z-index: 5;
+        // z-index: 9999999999999999999999999999;
     }
     .product-flex-group.selected, .product-flex-group.semi-selected{
         border: 1px solid rgb(131, 158, 125);
@@ -1187,12 +1217,12 @@ $shadow-color : rgb(38, 38, 42);
 }
 .custom-toggle{
     width: 60px;
-    background: #888;
+    background: #ccc;
     position: relative;
     font-size: 12px;
     height: 26px;
     border-radius: 35px;
-    color: white;
+    color: #888;
     overflow: hidden;
     box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.4);
     transition: background .3s ease;
@@ -1220,13 +1250,13 @@ $shadow-color : rgb(38, 38, 42);
     }
 }
 .custom-toggle.active{
-    background: #eee;
-    color: #333;
+    background: #508dde;
+    color: #fff;
     .toggle-belt{
         left: -1px;
     }
     .toggle-ball{
-        background: #333;
+        background: #fff;
     }
 }
 //PALLETTE

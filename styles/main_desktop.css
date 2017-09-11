@@ -26,6 +26,7 @@
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   font-family: Calibri;
+  opacity: 0.8;
 }
 
 .popup-notif-parent .number {
@@ -498,7 +499,7 @@
 
 .form-container {
   background: white;
-  padding: 10px 10px;
+  padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -523,7 +524,7 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  padding: 20px 10px;
+  padding: 15px 0px;
   border-bottom: 1px solid #f1f1f1;
   align-items: center;
 }
@@ -533,6 +534,7 @@
   font-size: 18px;
   letter-spacing: -1px;
   opacity: 0.6;
+  margin-right: 20px;
 }
 
 .form-container .form-group .form-input {
@@ -545,8 +547,24 @@
   margin-right: 5px;
 }
 
+.form-container .form-group .form-button {
+  background: #508dde;
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.form-container .form-group .form-button:hover {
+  opacity: 0.9;
+}
+
 .form-container .form-group .form-value {
   padding-left: 30px;
+}
+
+.form-container .form-group:nth-last-child(1) {
+  border-bottom: 0;
 }
 
 .form-container .edit-button {
@@ -555,6 +573,14 @@
   font-size: 13px;
   cursor: pointer;
   border-bottom: 1px solid #508dde;
+}
+
+.form-container.seperate .form-group {
+  justify-content: space-between;
+}
+
+.form-container.seperate .jo-checkparent {
+  padding: 0 10px 0 0;
 }
 
 .variation-parent {
@@ -819,6 +845,15 @@
   cursor: move;
 }
 
+.product-table-parent .product-flex-group .product-name {
+  cursor: pointer;
+}
+
+.product-table-parent .product-flex-group .product-name:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 .product-table-parent .product-flex-group .product-id {
   position: absolute;
   right: 101%;
@@ -855,7 +890,6 @@
 
 .product-table-parent .product-flex-group:hover {
   box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.15);
-  z-index: 5;
 }
 
 .product-table-parent .product-flex-group.selected, .product-table-parent .product-flex-group.semi-selected {
@@ -1322,12 +1356,12 @@
 
 .custom-toggle {
   width: 60px;
-  background: #888;
+  background: #ccc;
   position: relative;
   font-size: 12px;
   height: 26px;
   border-radius: 35px;
-  color: white;
+  color: #888;
   overflow: hidden;
   box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
   transition: background .3s ease;
@@ -1358,8 +1392,8 @@
 }
 
 .custom-toggle.active {
-  background: #eee;
-  color: #333;
+  background: #508dde;
+  color: #fff;
 }
 
 .custom-toggle.active .toggle-belt {
@@ -1367,7 +1401,7 @@
 }
 
 .custom-toggle.active .toggle-ball {
-  background: #333;
+  background: #fff;
 }
 
 .custom-range-slider {

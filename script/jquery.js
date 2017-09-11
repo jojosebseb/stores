@@ -177,7 +177,7 @@ $(function() {
 });
 priorityArranger();
 function priorityArranger(){
-    $('.product-flex-group').each(function(i){
+    $('.product-flex-group').not('.uncounted').each(function(i){
         $(this).find('.product-id').html(i);
     });
 }
@@ -226,9 +226,6 @@ $('.product-select').on('click', function(){
     }
 });
 
-$('.product-flex-group').on('click', function(){
-
-})
 
 //PRODUCT DELETION AND NOTIFICATION
 var idTemp = 0;
@@ -239,28 +236,30 @@ var myInterval;
 $('.product-delete').on('click', function(){
     popupCounter = $('.popup-notif-parent').length;
     productCounter = $('.product-flex-group.selected').length + $('.product-flex-group.semi-selected').length;
-    $('.product-flex-group.selected').hide(300).addClass('deleteGroup-'+popupCounter).removeClass('selected');
-    $(this).parents('.product-flex-group').hide(300).addClass('deleteGroup-'+popupCounter).removeClass('selected');
+    $('.product-flex-group.selected').hide(300).addClass('deleteGroup-'+popupCounter).addClass('uncounted').removeClass('selected');
+    $(this).parents('.product-flex-group').hide(300).addClass('deleteGroup-'+popupCounter).addClass('uncounted').removeClass('selected');
     notifPopup();
     setTimeout(function(){notifPositioner();}, 10);
     clearInterval(myInterval);
     notifTimer();
-
+    priorityArranger();
 });
 $('body').on('click', '.undo-button', function(){
     $(this).parent().remove();
     idTemp = $(this).parent().attr('id');
     $('.'+idTemp).show(300);
+    $('.'+idTemp).removeClass('uncounted');
     $('.'+idTemp).find('.product-select').html('Select');
     $('.product-flex-group').removeClass(idTemp);
     notifPositioner();
-
+    priorityArranger();
 });
 $('body').on('click', '.close-button', function(){
     $(this).parent().remove();
     idTemp = $(this).parent().attr('id');
     $('.'+idTemp).remove();
     notifPositioner();
+    priorityArranger();
 });
 function notifPopup(){
     popupCounter = $('.popup-notif-parent').length;
@@ -288,9 +287,9 @@ function notifTimer(){
             if (tempWidth == 0) {
                 $(this).remove();
                 $('.'+tempId).remove();
+                priorityArranger();
             }
-
-            notifPositioner()
+            notifPositioner();
         });
         if ($('.popup-notif-parent').length == 0) {
             clearInterval(myInterval);
@@ -303,9 +302,24 @@ function notifTimer(){
 //PRODUCT DELETION AND NOTIFICATION
 
 //variation
-var variationParent = '<div class="variation-parent"><input type="text" class="variation-name" value="Variable Name"><input type="text" class="form-input" style="width:70px;"><div class="delete-icon">-</div></div>';
+// var variationParent = '<div class="variation-parent"><input type="text" class="variation-name" value="Variable Name"><input type="text" class="form-input" style="width:70px;"><div class="delete-icon">-</div></div>';
+// $('#addVariation').on('click', function(){
+//     $(this).parent().find('.form-input.temp').remove();
+//     $(this).parent().prepend(variationParent);
+// })
+// var thisEl;
+// $('.main-content').on('click', '.delete-icon',function(){
+//     thisEl = $(this);
+//     $(this).parents('.variation-parent').remove();
+//     if ($('.variation-parent').length == 0 ) {
+//         $('#variationGroup').prepend('<input type="text" class="form-input temp" style="width:90px;">');
+//     }
+// })
+
+var variationParent = '<div class="variation-parent"><input type="text" class="variation-name varname" placeholder="Variation Text" name="varname[]" required><input type="text" class="form-input varqty qtyinput" style="width:70px;" name="varqty[]" value="1"><div class="unlimited-icon unpressed">~</div><div class="delete-icon">-</div></div>';
+
 $('#addVariation').on('click', function(){
-    $(this).parent().find('.form-input.temp').remove();
+    $(this).parent().find('#qty').remove();
     $(this).parent().prepend(variationParent);
 })
 var thisEl;
@@ -313,7 +327,7 @@ $('.main-content').on('click', '.delete-icon',function(){
     thisEl = $(this);
     $(this).parents('.variation-parent').remove();
     if ($('.variation-parent').length == 0 ) {
-        $('#variationGroup').prepend('<input type="text" class="form-input temp" style="width:90px;">');
+        $('#variationGroup').prepend('<input type="text" min="1" id="qty" name="qty" placeholder="Input stock" class="form-input qtyinput temp" value="1" style="width:90px;">');
     }
 })
 
