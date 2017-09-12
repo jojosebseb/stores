@@ -497,6 +497,10 @@
   border-radius: 3px;
 }
 
+.click-to-upload-image:hover {
+  border: 2px dashed #888;
+}
+
 .form-container {
   background: white;
   padding: 10px 20px;
@@ -529,11 +533,17 @@
   align-items: center;
 }
 
+.form-container .form-group .social-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+}
+
 .form-container .form-group .form-caption {
   min-width: 140px;
   font-size: 18px;
   letter-spacing: -1px;
-  opacity: 0.6;
+  opacity: 0.9;
   margin-right: 20px;
 }
 
@@ -550,8 +560,8 @@
 .form-container .form-group .form-button {
   background: #508dde;
   color: white;
-  padding: 8px 25px;
-  font-size: 14px;
+  padding: 7px 23px;
+  font-size: 13px;
   border-radius: 3px;
 }
 
@@ -561,6 +571,15 @@
 
 .form-container .form-group .form-value {
   padding-left: 30px;
+}
+
+.form-container .form-group .group .form-group {
+  padding: 10px 0;
+}
+
+.form-container .form-group .group .form-group .form-caption {
+  min-width: 70px;
+  font-size: 16px;
 }
 
 .form-container .form-group:nth-last-child(1) {
@@ -580,7 +599,62 @@
 }
 
 .form-container.seperate .jo-checkparent {
-  padding: 0 10px 0 0;
+  padding: 0 7px 0 0;
+}
+
+.form-group.premium {
+  overflow: hidden;
+  position: relative;
+}
+
+.form-group.premium:after {
+  content: "PREMIUM";
+  background: #41588c;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+  font-size: 9px;
+  padding: 6px 36px;
+  transform: rotateZ(45deg);
+  right: -37px;
+  top: 12px;
+  position: absolute;
+  opacity: 0.93;
+  color: white;
+}
+
+.form-container.singles {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.form-container.singles .form-group {
+  background: white;
+  padding: 20px 20px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.form-container.singles .form-group .form-caption {
+  position: relative;
+}
+
+.form-container.singles .form-group .form-subcaption {
+  font-size: 13px;
+  opacity: 0.6;
+  padding-top: 3px;
+}
+
+.image-container {
+  padding-left: 70px;
+}
+
+.image-container .icon {
+  width: 73px;
+  display: inline-block;
+  position: absolute;
+  top: -15px;
+  left: -15px;
 }
 
 .variation-parent {
@@ -1556,6 +1630,7 @@
 
 .product-flex#lay-3 .product-module {
   width: 310px;
+  margin-bottom: 40px;
 }
 
 .product-flex#lay-3:after {
