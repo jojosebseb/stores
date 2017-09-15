@@ -10,6 +10,10 @@ $('.settings-flex > .flex-module').on('click', function(){
     $('#' + curId).addClass('active');
 });
 
+$('.email-layout-flex').on('click', '.layout-module', function(){
+    $('.email-layout-flex .layout-module').removeClass('selected');
+    $(this).addClass('selected');
+})
 var classLay;
 
 $('#layoutSettings  .layout-choice').on('click', function(){
@@ -153,6 +157,7 @@ $('body').on('click', '.custom-toggle', function(){
         }
     }
 });
+
 
 //jo-checkbox
 var template = '<div class="custom-toggle" id=""><div class="toggle-belt">On <div class="toggle-ball"></div> Off</div></div>';

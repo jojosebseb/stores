@@ -7,7 +7,17 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url("../fonts/NotoSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Noto Bold';
+  src: url("../fonts/NotoSans-Bold.ttf");
 }
 
 .popup-notif-parent {
@@ -20,18 +30,16 @@
   text-align: center;
   z-index: 5;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   opacity: 0;
   transition: all .4s ease;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  font-family: Calibri;
   opacity: 0.8;
 }
 
 .popup-notif-parent .number {
   color: red;
-  font-family: Calibri;
   padding-right: 3px;
 }
 
@@ -282,6 +290,63 @@
   position: relative;
 }
 
+.feed-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feed-list .store-container {
+  background: white;
+  border-radius: 5px;
+  padding: 30px 25px 40px;
+  margin: 3% 3% 0 0;
+  text-align: center;
+  width: 22%;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.feed-list .store-container .store-avatar {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.feed-list .store-container .store-avatar img {
+  display: block;
+  width: 100%;
+}
+
+.feed-list .store-container .store-name {
+  margin: 10px 0 0px;
+  font-family: 'Noto Bold';
+  opacity: 0.89;
+}
+
+.feed-list .store-container .store-description {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+.feed-list .store-container .follow-button {
+  border: 1px solid #508dde;
+  text-align: center;
+  color: #508dde;
+  padding: 6px 0;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.feed-list .store-container .follow-button.followed {
+  color: white;
+  background: #508dde;
+}
+
 .welcome-text {
   font-size: 40px;
   text-align: center;
@@ -355,18 +420,16 @@
 
 .parent-title {
   background: white;
-  padding: 20px;
   font-size: 20px;
-  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.1);
-  font-family: Calibri;
+  box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .parent-title .container {
-  font-family: 'Varela Round';
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 1050px;
+  height: 70px;
 }
 
 .parent-title .page-functions {
@@ -382,6 +445,38 @@
   border-radius: 3px;
   cursor: pointer;
   margin-right: 10px;
+}
+
+.parent-title .page-functions .function-flex {
+  display: flex;
+}
+
+.parent-title .page-functions .function-flex .follower-module {
+  position: relative;
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  padding: 16px 0;
+  font-family: 'Noto Bold';
+  border-left: 1px solid rgba(212, 212, 212, 0.4);
+  border-top: 0;
+  border-bottom: 0;
+  cursor: pointer;
+}
+
+.parent-title .page-functions .function-flex .follower-module .caption {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.parent-title .page-functions .function-flex .follower-module.active {
+  background: #508dde;
+  color: white;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .default-button {
@@ -540,10 +635,10 @@
 }
 
 .form-container .form-group .form-caption {
-  min-width: 140px;
-  font-size: 18px;
-  letter-spacing: -1px;
-  opacity: 0.9;
+  min-width: 120px;
+  font-size: 15px;
+  font-family: 'Noto Bold';
+  color: rgba(0, 0, 0, 0.7);
   margin-right: 20px;
 }
 
@@ -578,8 +673,8 @@
 }
 
 .form-container .form-group .group .form-group .form-caption {
-  min-width: 70px;
-  font-size: 16px;
+  min-width: 75px;
+  font-size: 14px;
 }
 
 .form-container .form-group:nth-last-child(1) {
@@ -872,6 +967,7 @@
 
 .product-table-parent .product-name {
   width: 50%;
+  font-size: 14px;
 }
 
 .product-table-parent .product-header {
@@ -1120,6 +1216,106 @@
 
 .order-list-parent .payment-status .payment-bg.canceled {
   background: #ed5252;
+}
+
+.email-layout-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 900px;
+  margin: auto;
+}
+
+.email-layout-flex .layout-module {
+  width: 20%;
+  margin: 2.5%;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all .3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.email-layout-flex .layout-module img {
+  width: 100%;
+}
+
+.email-layout-flex .layout-module:hover {
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.email-layout-flex .layout-module.selected::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.email-layout-parent {
+  width: 640px;
+  border: solid 2px #ddd;
+  margin: 20px auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.email-layout-parent .boxed, .email-layout-parent .email-banner, .email-layout-parent .image-box {
+  border: 2px dashed #ccc;
+}
+
+.email-layout-parent .boxed:hover, .email-layout-parent .email-banner:hover, .email-layout-parent .image-box:hover {
+  border: 2px dashed #aaa;
+}
+
+.email-layout-parent .email-banner {
+  cursor: pointer;
+  margin: 10px 0;
+  width: 100%;
+  background-image: url("../img/icons/icon_image_upload.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70px;
+}
+
+.email-layout-parent .w30 {
+  width: 170px;
+}
+
+.email-layout-parent .email-input {
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  outline: none;
+  border-radius: 3px;
+  font-family: 'Noto Sans', sans-serif;
+  max-width: 100%;
+}
+
+.email-layout-parent .full-button {
+  width: 100%;
+}
+
+.email-layout-parent .image-box {
+  cursor: pointer;
+  margin: 10px 0;
+  width: 170px;
+  height: 170px;
+  background-image: url("../img/icons/icon_image_upload.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70px;
+}
+
+#email-lay-1 .email-banner {
+  height: 240px;
+  text-align: center;
+  color: white;
+  font-size: 60px;
 }
 
 .toggle-id {
@@ -1557,7 +1753,6 @@
   padding: 5px;
   margin-bottom: 20px;
   width: 230px;
-  font-family: 'Crimson Text';
   font-size: 20px;
   transition: opacity .3s ease;
   background: #fafafa;
@@ -1583,16 +1778,7 @@
   color: transparent;
 }
 
-.main-store .product-flex .product-module .product-name {
-  font-family: Calibri;
-}
-
-.main-store .product-flex .product-module .product-price {
-  font-family: Calibri;
-}
-
 .main-store .product-flex .product-module .unit {
-  font-family: Calibri;
   font-size: 12px;
 }
 
