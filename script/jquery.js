@@ -348,8 +348,54 @@ $('.main-content').on('keyup', '.variation-name', function(){
     }
 });
 
-// var deleteNotif = 0;
-//
-// function notifHandle(){
-//
-// }
+
+//FRONT PALLETTE------------------------------------------------------------------------------
+$('body').on('click', function(){
+    $('#searchForm').removeClass('active');
+});
+$('#searchForm').on('click', function(e){
+    $(this).addClass('active');
+    e.stopPropagation();
+});
+
+
+function popupShow(popupId){
+    $('#'+popupId).addClass('active');
+};
+function popupClose(){
+    $('.stores-popup').removeClass('active');
+}
+
+$('#loginPopupBtn').on('click', function(){
+    popupShow('loginPopup');
+});
+$('#cartPopupBtn').on('click', function(){
+    popupShow('cartPopup');
+});
+$('.popup-fader').on('click', function(){
+    popupClose();
+});
+$('.close-popup').on('click', function(){
+    popupClose();
+});
+
+$('body').on('click','.qty-btn', function(){
+    var inpt = $(this).parent().find('.cart-qty-input');
+    if ($(this).hasClass('qtySub')) {
+        console.log(inpt.val());
+        inpt.val(parseInt(inpt.val())-1);
+    }else {
+        inpt.val(parseInt(inpt.val())+1);
+
+    }
+});
+var tmp;
+$('.img-thumb > .thumb-child').on('click', function(){
+    $('.img-thumb > .thumb-child').removeClass('active');
+    $(this).addClass('active');
+    tmp = $(this).find('img').attr('src');
+    $('.img-box > img').attr('src', tmp);
+
+
+});
+//FRONT PALLETTE------------------------------------------------------------------------------

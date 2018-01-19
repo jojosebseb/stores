@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="">
+    <title>WEB TITLE</title>
+
+    <!-- cloud css start -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/jquery-ui-1.12.1.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/slick-1.6.0.css" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <!-- cloud css end-->
+
+    <!-- local css start -->
+    <link rel="stylesheet" type="text/css" href="styles/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 1050px)" href="styles/main_desktop.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 1049px)" href="styles/main_mobile.css" />
+    <!-- local css end -->
+</head>
+<body>
+<div id="navbar">
+    <form action="#" id="searchForm">
+        <input type="text" placeholder="Search.." id="searchInput">
+        <input type="submit" class="navbar-search" value="">
+    </form>
+    <ul class="nav-functions">
+        <li id="loginPopupBtn"><a href="#">LOGIN</a></li>
+        <li id="cartPopupBtn"><a href="#"></a></li>
+    </ul>
+</div>
+<div class="main-store">
+    <div class="container">
+
+        <div class="section-1">
+            <div class="main-header font-group-1" id="mainStoreHeader" style="font-family:Varela Round">
+                <img src="https://p1-e6eeae93.imageflux.jp/artless/e28d76d989fe4a080ba1.jpeg" alt="">
+            </div>
+            <div class="checkout-header">
+                <a href="#" class="active">Information</a>
+                <a href="#">Payment Method</a>
+                <a href="#">Confirmation</a>
+                <a href="#">Finish</a>
+            </div>
+        </div>
+
+        <div class="section-2">
+            <form action="#" class=" form-container" id="checkoutForm">
+                <div class="title">
+                    Customer Information
+                </div>
+                <div class="form-group">
+                    <div class="form-caption">Name</div>
+                    <input type="text" class="form-input" placeholder="First Name">
+                    <input type="text" class="form-input" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <div class="form-caption">Postal Code</div>
+                    <input type="text" class="form-input" placeholder="Eg. 14350">
+                </div>
+                <div class="form-group">
+                    <div class="form-caption">City</div>
+                    <input type="text" class="form-input" placeholder="Eg. Jakarta, Bandung, etc.">
+                </div>
+                <div class="form-group">
+                    <div class="form-caption">Address 1</div>
+                    <textarea name="" id="" class="form-input"></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="form-caption">Phone Number</div>
+                    <input type="text" class="form-input" placeholder="Eg. 089812398">
+                </div>
+                <div class="form-group">
+                    <div class="form-caption">Mail Address</div>
+                    <input type="text" class="form-input" placeholder="Eg. jojosebseb@gmail.com">
+                </div>
+                <div class="form-group">
+                    <div class="form-caption">Mail Address</div>
+                    <input type="text" class="form-input" placeholder="Eg. jojosebseb@gmail.com">
+                </div>
+                <div class="form-group">
+                    <div class="form-caption">Remarks</div>
+                    <textarea name="" id="" class="form-input"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="form-button" value="Submit">
+
+                </div>
+
+
+            </form>
+        </div>
+
+
+
+
+    </div>
+
+</div>
+<div class="footer-general">
+    <div class="container">
+        Powered by <img src="img/icons/logo-store-white.png" alt="">
+    </div>
+</div>
+<div class="stores-popup" id="loginPopup">
+    <div class="popup-fader"></div>
+    <div class="popup-content">
+        <div class="close-popup"></div>
+        <form action="#">
+            <div class="title">
+                Login
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Email or username">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="form-button" name="Login">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="stores-popup" id="cartPopup">
+    <div class="popup-fader"></div>
+    <div class="popup-content">
+        <div class="close-popup"></div>
+        <div class="cart-content">
+            <div class="title">
+                Cart
+            </div>
+            <div class="cart-row header">
+                <div class="cart-delete"></div>
+                <div class="cart-img"></div>
+                <div class="cart-name">Item Name</div>
+                <div class="cart-price">Price</div>
+                <div class="cart-qty"><div class="gap"></div>Quantity<div class="gap"></div>
+                </div>
+                <div class="cart-subtotal">Subtotal</div>
+            </div>
+            <div class="cart-row">
+                <div class="cart-delete"><img src="img/icons/icon_close_small.svg" alt=""></div>
+                <div class="cart-img"><img src="img/dummy/p1.jpeg" alt=""></div>
+                <div class="cart-name"> [Limited 10] DESIGNART x artless Wall mug Demita</div>
+                <div class="cart-price"><span class="unit">IDR</span>8,000,000</div>
+                <div class="cart-qty"> <div class="qty-btn qtySub">-</div> <input type="text" class="cart-qty-input" value="1"> <div class="qty-btn qtyAdd">+</div></div>
+                <div class="cart-subtotal"><span class="unit">IDR</span>8,000,000</div>
+            </div>
+            <div class="cart-row">
+                <div class="cart-delete"><img src="img/icons/icon_close_small.svg" alt=""></div>
+                <div class="cart-img"><img src="img/dummy/p3.jpg" alt=""></div>
+                <div class="cart-name"> [Limited 12] DESIGNART x artless Wall mug Demita</div>
+                <div class="cart-price"><span class="unit">IDR</span>1,000,000</div>
+                <div class="cart-qty"> <div class="qty-btn qtySub">-</div> <input type="text" class="cart-qty-input" value="1"> <div class="qty-btn qtyAdd">+</div></div>
+                <div class="cart-subtotal"><span class="unit">IDR</span>1,000,000</div>
+            </div>
+            <div class="cart-row total">
+                <div class="cart-delete"></div>
+                <div class="cart-img"></div>
+                <div class="cart-name"></div>
+                <div class="cart-price"></div>
+                <div class="cart-qty">Total:</div>
+                <div class="cart-subtotal"><span class="unit">IDR</span>1,000,000</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    <!-- cloud js start -->
+
+    <!-- <script type="text/javascript" src="http://js.static.sldclc.com/angular.1.6.min.js"></script> -->
+
+    <!-- cloud js end   -->
+
+    <!-- local js start -->
+
+    <script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="script/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="script/slick-1.6.0.min.js"></script>
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/angular.js"></script>
+    <!-- local js end   -->
+</html>
